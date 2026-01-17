@@ -6,7 +6,13 @@
       "Bash(npm run typecheck:*)",
       "Bash(npm test:*)",
       "Bash(move \"C:\\\\Projects\\\\sqlite-cloud-backup\\\\src\\\\providers\\\\google-drive-provider.ts\" \"C:\\\\Projects\\\\sqlite-cloud-backup\\\\src\\\\providers\\\\google-drive\\\\google-drive-provider.ts\")",
-      "Bash(npm run lint:*)"
+      "Bash(npm run lint:*)",
+      "Bash(npm install:*)",
+      "Bash(node scripts/get-refresh-token.js:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npm pack:*)",
+      "Bash(git push)"
     ]
   }
 }

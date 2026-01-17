@@ -48,8 +48,10 @@ await sync.sync();
 ### Step 1: Create Google Cloud Project
 
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project
-3. Enable **Google Drive API**
+2. Create a new project (or select an existing one)
+3. Go to **APIs & Services** > **Library**
+4. Search for "Google Drive API"
+5. Click on it and press **Enable**
 
 ### Step 2: Create OAuth Credentials
 
