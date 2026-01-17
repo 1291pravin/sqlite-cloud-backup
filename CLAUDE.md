@@ -74,3 +74,7 @@ npx vitest run tests/unit/checksum.test.ts
 - All I/O operations must be async
 - Prefix unused parameters with underscore (`_param`)
 - Export types from `src/types/index.ts`
+
+## Git Commits
+
+- **Never add Co-Authored-By lines** - all commits should be attributed solely to the user
