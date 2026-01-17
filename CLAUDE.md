@@ -58,7 +58,7 @@ npm run lint:fix       # Auto-fix linting issues
 
 - Strict mode enabled
 - Target: ES2022
-- Dual output: CommonJS (.js) and ESM (.mjs)
+- Dual output: CommonJS (.cjs) and ESM (.js)
 - Node >=18.0.0 required
 
 ## Testing
