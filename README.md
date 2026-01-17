@@ -250,11 +250,6 @@ await sync.pushToCloud();
 - ✅ TypeScript support
 
 **Coming in v0.2+:**
-- ⏳ Advanced conflict resolution strategies
-- ⏳ Auto-sync with background scheduler
-- ⏳ Sync history & rollback
-- ⏳ Optional AES-256 encryption
-- ⏳ Retry logic with exponential backoff
 - ⏳ Additional providers (Dropbox, S3)
 
 ## Requirements

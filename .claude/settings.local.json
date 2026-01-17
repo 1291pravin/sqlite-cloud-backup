@@ -12,7 +12,8 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(npm pack:*)",
-      "Bash(git push)"
+      "Bash(git push)",
+      "mcp__github__search_repositories"
     ]
   }
 }
