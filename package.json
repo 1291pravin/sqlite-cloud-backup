@@ -25,7 +25,10 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "publish:patch": "node scripts/publish.js patch",
+    "publish:minor": "node scripts/publish.js minor",
+    "publish:major": "node scripts/publish.js major"
   },
   "keywords": [
     "sqlite",

@@ -78,3 +78,24 @@ npx vitest run tests/unit/checksum.test.ts
 ## Git Commits
 
 - **Never add Co-Authored-By lines** - all commits should be attributed solely to the user
+
+## Publishing (/publish command)
+
+When the user says `/publish`, follow this workflow:
+
+1. **Ask for version type**: patch (bug fixes), minor (new features), or major (breaking changes)
+2. **Check for uncommitted changes**: Run `git status --porcelain` - abort if dirty
+3. **Run tests**: `npm test` - abort if tests fail
+4. **Run typecheck**: `npm run typecheck` - abort if type errors
+5. **Bump version**: `npm version <type>` (this creates commit + tag automatically)
+6. **Push to GitHub**: `git push origin main --tags`
+7. **Confirm success**: Link to GitHub Actions for monitoring
+
+The GitHub Actions workflow will automatically publish to npm with provenance.
+
+### Quick commands
+```bash
+npm run publish:patch   # 0.1.2 -> 0.1.3
+npm run publish:minor   # 0.1.2 -> 0.2.0
+npm run publish:major   # 0.1.2 -> 1.0.0
+```
