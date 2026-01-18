@@ -1,6 +1,6 @@
 {
   "name": "sqlite-cloud-backup",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "description": "Lightweight SQLite database synchronization to Google Drive with zero vendor lock-in",
   "main": "./dist/index.cjs",
