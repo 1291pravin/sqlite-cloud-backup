@@ -41,7 +41,8 @@ describe('DatabaseManager', () => {
     });
 
     it('should throw when database does not exist', () => {
-      const nonExistentManager = new DatabaseManager('/non/existent/path.db', logger);
+      const nonExistentPath = path.join(testDir, 'does-not-exist', 'path.db');
+      const nonExistentManager = new DatabaseManager(nonExistentPath, logger);
       expect(() => nonExistentManager.open()).toThrow('Database not found');
     });
 
