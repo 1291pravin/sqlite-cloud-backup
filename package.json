@@ -39,7 +39,8 @@
     "database",
     "offline-first",
     "electron",
-    "react-native"
+    "nodejs",
+    "cli"
   ],
   "author": "1291pravin",
   "license": "MIT",

@@ -204,27 +204,6 @@ app.on('ready', async () => {
 });
 ```
 
-### React Native
-
-```typescript
-import SqliteCloudBackup from 'sqlite-cloud-backup';
-import RNFS from 'react-native-fs';
-
-const dbPath = `${RNFS.DocumentDirectoryPath}/app.db`;
-const sync = new SqliteCloudBackup({
-  dbPath,
-  provider: 'google-drive',
-  credentials: { /* ... */ }
-});
-
-// Sync when app comes to foreground
-AppState.addEventListener('change', async (state) => {
-  if (state === 'active') {
-    await sync.sync();
-  }
-});
-```
-
 ### CLI Tools
 
 ```typescript
@@ -251,6 +230,30 @@ await sync.pushToCloud();
 
 **Coming in v0.2+:**
 - ⏳ Additional providers (Dropbox, S3)
+
+## Important Limitations
+
+### Single-Device Use Only
+
+This library is designed for **single-device backup scenarios**. The sync logic uses timestamps to determine whether to push or pull, which works reliably when only one device accesses the cloud backup.
+
+**Not supported:**
+- Multiple devices syncing to the same cloud folder simultaneously
+- Real-time collaboration or multi-user scenarios
+- Conflict resolution between concurrent modifications
+
+If you need multi-device sync, consider a full database sync solution like [PowerSync](https://www.powersync.com/), [ElectricSQL](https://electric-sql.com/), or a traditional backend database.
+
+### Security Note for Distributed Apps
+
+If you're distributing an Electron app or CLI tool, be aware that OAuth client secrets embedded in your application can be extracted by users. For desktop applications, Google recommends:
+
+1. **Use a public OAuth client** (no secret required) with PKCE flow
+2. **Or** accept that the secret is not truly secret in distributed apps
+
+The client secret primarily protects against other developers impersonating your app, not end-users. Your users' data remains protected by their own OAuth consent.
+
+For server-side applications where the secret stays on your server, this is not a concern.
 
 ## Requirements
 
